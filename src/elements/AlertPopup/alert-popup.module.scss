@@ -1,0 +1,58 @@
+@import "../../assets/scss/mixins";
+@import "../../assets/scss/variables";
+@import "sass-rem";
+.popup_container {
+  margin: 0;
+  width: 100%;
+  max-width: rem(375px);
+}
+.popup_paper {
+  width: 100%;
+  margin: auto rem(27.5px) !important;
+}
+.popup_root {
+  display: flex;
+  justify-content: center;
+}
+.popup_wrapper {
+  &.dark {
+    background-color: #1f1f29;
+    .content_wrapper {
+      border-bottom: 1px solid #3a3a3d;
+    }
+  }
+  &.light {
+    background-color: #fff;
+    .content_wrapper {
+      border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    }
+  }
+  width: 100%;
+  height: rem(200px) !important;
+  padding: 0 !important;
+  .content_wrapper {
+    height: rem(152px) !important;
+    border-bottom: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: rem(16px);
+    .title {
+      margin-bottom: rem(8px);
+      white-space: pre-wrap;
+      text-align: center;
+    }
+    .description {
+      text-align: center;
+      white-space: pre-line;
+    }
+  }
+  .action_wrapper {
+    height: rem(48px);
+    display: flex;
+    button {
+      flex: 1;
+    }
+  }
+}

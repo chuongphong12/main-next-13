@@ -1,0 +1,18 @@
+@import "../../assets/scss/mixins";
+@import "../../assets/scss/variables";
+@import "sass-rem";
+
+.loading_normal {
+  color: $blue-900 !important;
+}
+
+.loading_standard {
+  color: $border-grey !important;
+}
+
+.wrapper-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 344px);
+}

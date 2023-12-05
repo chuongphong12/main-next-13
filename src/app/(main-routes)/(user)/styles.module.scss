@@ -1,0 +1,34 @@
+@import "../../assets/scss/_variables.scss";
+@import "../../assets/scss/_mixins.scss";
+@import "sass-rem";
+.sign_in {
+  @include flex-center-column;
+  padding: 3rem;
+  border-radius: 1.5rem;
+  max-width: rem(549px);
+  width: 100%;
+  @media screen and (max-width: 576px) {
+    padding: 4.78rem 1.25rem 0 1.25rem;
+  }
+  .bottom_signup {
+    text-align: right;
+    a {
+      margin-left: 20px;
+    }
+  }
+  .icon {
+    color: black;
+  }
+  .form {
+    margin: 2.5rem 0;
+    width: 100%;
+  }
+  .form_signup {
+    margin: 2.5rem 0 0 0;
+    width: 100%;
+  }
+  .register_wrapper {
+    display: flex;
+    gap: rem(4px);
+  }
+}
