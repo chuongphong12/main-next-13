@@ -45,7 +45,8 @@ export async function logout() {
 	const res = await axios.put<any>(`${ENDPOINT}/logout`);
 	const { data, error }: IResponse = res;
 	TokenService.removeAuth();
-	redirect('/sign-in');
+	window.location.href = '/sign-in';
+
 	// return {
 	// 	data,
 	// 	error,

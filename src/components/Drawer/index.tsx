@@ -237,7 +237,7 @@ const CustomDrawer = ({ handleLayoutToggle }: any) => {
 	const drawerPublicData: IDrawerItem[] = [
 		{
 			text: '메인 홈',
-			to: '/',
+			to: '/home',
 			icon: <RocketDrawer stroke={theme.palette.main.gray10} />,
 			activeIcon: <RocketDrawerFilled />,
 		},

@@ -48,9 +48,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 		<html lang='en' suppressHydrationWarning={true}>
 			<body className={`${pretendard.className} ${roboto_mono.variable}`}>
 				<ThemeRegistry options={{ key: 'mui' }}>
-					{/* <Suspense fallback={null}> */}
-					<NavigationEvents>{children}</NavigationEvents>
-					{/* </Suspense> */}
+					<Suspense fallback={null}>
+						<NavigationEvents>{children}</NavigationEvents>
+					</Suspense>
 				</ThemeRegistry>
 			</body>
 		</html>

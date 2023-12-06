@@ -57,14 +57,16 @@ instance.interceptors.response.use(
 						return instance(originalConfig);
 					} else {
 						TokenService.removeAuth();
-						Router.push('/sign-in');
+						window.location.href = '/sign-in';
+
 						return Promise.resolve({ error: err.response?.data?.error });
 					}
 				} catch (_error) {
 					console.log('_error', _error);
 
 					TokenService.removeAuth();
-					Router.push('/sign-in');
+					window.location.href = '/sign-in';
+
 					return Promise.resolve(_error);
 				}
 			}
