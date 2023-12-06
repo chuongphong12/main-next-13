@@ -1,30 +1,21 @@
-import * as React from 'react';
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
+import Typography from '@/elements/Typography';
+import { convertToRem } from '@/utils/convert-to-rem';
 import {
 	Box,
 	CardActionArea,
+	IconButton,
+	Chip as MChip,
+	ChipProps as MChipProps,
 	styled,
 	useMediaQuery,
 	useTheme,
-	ChipProps as MChipProps,
-	Chip as MChip,
-	Avatar,
-	IconButton,
 } from '@mui/material';
-import { convertToRem } from 'utils/convert-to-rem';
-import PlusLgIcon from '../../assets/icons/plus-lg';
-import Typography from '@/elements/Typography';
+import Card from '@mui/material/Card';
 import Image from 'next/image';
-import HeartBlankIcon from '../../assets/icons/heart-blank';
-import HeartIcon from '../../assets/icons/heart';
-import BookmarkCheckbox from '@/elements/BookmarkCheckbox';
-import YoutubeIcon from '../../assets/icons/youtube-logo';
+import { useState } from 'react';
+import Bookmark from '../../assets/icons/bookmark';
 import BookmarkFilledIcon from '../../assets/icons/bookmark-sm-filled';
 import HeartFilledIcon from '../../assets/icons/heart-filled';
-import Bookmark from '../../assets/icons/bookmark';
-import { useState } from 'react';
 export type ChipProps = MChipProps & {
 	type?: string;
 };
@@ -117,14 +108,15 @@ export default function CardCommunityEvent() {
 					}}>
 					<Image
 						src='/images/test-img.png'
-						layout='fill'
+						width={100}
+						height={192}
 						style={{
-							maxHeight: convertToRem(192) + ' !important',
 							objectFit: 'contain',
 							width: '100%',
 							position: 'relative',
 							height: 'unset !important',
 						}}
+						alt='test'
 					/>
 				</Box>
 			</Box>

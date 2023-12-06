@@ -46,7 +46,7 @@ const NavigationEvents = ({ children }: any) => {
 			setLoading(false);
 			router.push('/sign-in');
 		} else if (TokenService.getAuth() && publicPaths.some((i) => path.includes(i))) {
-			router.push('/home');
+			router.push('/');
 			setLoading(false);
 		} else {
 			setLoading(false);

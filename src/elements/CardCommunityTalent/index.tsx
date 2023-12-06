@@ -1,3 +1,6 @@
+import Typography from '@/elements/Typography';
+import { IPool } from '@/types/pool.type';
+import { convertToRem } from '@/utils/convert-to-rem';
 import {
 	Avatar,
 	Box,
@@ -7,10 +10,7 @@ import {
 	useTheme,
 } from '@mui/material';
 import Card from '@mui/material/Card';
-import Typography from '@/elements/Typography';
 import { useState } from 'react';
-import { IPool } from 'types/pool.type';
-import { convertToRem } from 'utils/convert-to-rem';
 export type ChipProps = MChipProps & {
 	type?: string;
 };

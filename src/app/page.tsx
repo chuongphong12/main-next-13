@@ -1,6 +1,5 @@
-import { Backdrop, CircularProgress } from '@mui/material';
-import { ReactNode } from 'react';
-
-export default function Home({ children }: { children: ReactNode }) {
+const Home = ({ children }: any): JSX.Element => {
 	return <main>{children}</main>;
-}
+};
+
+export default Home;

@@ -1,11 +1,12 @@
+import NavigationEvents from '@/layouts/navigation-event';
 import ThemeRegistry from '@/libs/ThemeRegistry';
 import moment from 'moment';
 import 'moment/locale/ko';
 import type { Metadata } from 'next';
 import { Roboto_Mono } from 'next/font/google';
 import localFont from 'next/font/local';
-import './globals.css';
-import NavigationEvents from '@/layouts/navigation-event';
+import { Suspense } from 'react';
+import './globals.scss';
 moment().locale('ko');
 
 const pretendard = localFont({
@@ -47,7 +48,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 		<html lang='en' suppressHydrationWarning={true}>
 			<body className={`${pretendard.className} ${roboto_mono.variable}`}>
 				<ThemeRegistry options={{ key: 'mui' }}>
+					{/* <Suspense fallback={null}> */}
 					<NavigationEvents>{children}</NavigationEvents>
+					{/* </Suspense> */}
 				</ThemeRegistry>
 			</body>
 		</html>

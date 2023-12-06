@@ -7,11 +7,14 @@ const nextConfig = {
   sassOptions: {
     includePaths: [path.join(__dirname, 'styles')],
   },
+  images: {
+    remotePatterns: [{hostname: 'd2cp56g25ib4hk.cloudfront.net'}]
+  },
   async redirects() {
     return [
       {
         source: '/',
-        destination: '/home',
+        destination: '/blogs',
         permanent: true,
       },
     ]

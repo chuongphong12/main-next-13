@@ -1,16 +1,11 @@
-import React, { useContext, useEffect, useState } from 'react';
-import { useRouter } from 'next/router';
-import { Box } from '@mui/system';
-import { Grid, IconButton, useMediaQuery, useTheme } from '@mui/material';
-import Link from 'next/link';
-import styles from '../styles.module.scss';
-import ControlInput from '@/elements/ControlInput';
-import { Visibility, VisibilityOff } from '@mui/icons-material';
+import LinkExpiredIcon from '@/assets/icons/link-expired';
 import ButtonCustom from '@/elements/Button';
 import Typography from '@/elements/Typography';
-import MailLargeIcon from '@/assets/icons/mail-large';
 import { convertToRem } from '@/utils/convert-to-rem';
-import LinkExpiredIcon from '@/assets/icons/link-expired';
+import { useMediaQuery, useTheme } from '@mui/material';
+import { Box } from '@mui/system';
+import { useRouter } from 'next/navigation';
+import styles from '../styles.module.scss';
 
 const LinkExpired = ({ onClick, buttonTitle }: any) => {
 	const theme = useTheme();

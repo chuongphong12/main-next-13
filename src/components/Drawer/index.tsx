@@ -218,7 +218,7 @@ const CustomDrawer = ({ handleLayoutToggle }: any) => {
 	const drawerPersonalData: IDrawerItem[] = [
 		{
 			text: '메인 홈',
-			to: '/',
+			to: '/blogs',
 			icon: <Home stroke={theme.palette.main.gray10} />,
 			activeIcon: <HomeActiveIcon />,
 		},

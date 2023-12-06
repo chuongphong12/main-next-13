@@ -185,7 +185,7 @@ const SignIn = () => {
 				<Typography cate='caption_1' color={theme.palette.main.gray40}>
 					아직 회원이 아니신가요?
 				</Typography>
-				<Link href='/signup' style={{ zIndex: 3 }}>
+				<Link href='/sign-up' style={{ zIndex: 3 }}>
 					<Box display={'flex'} alignItems='center' sx={{ cursor: 'pointer' }}>
 						<Typography cate='caption_1' color={theme.palette.main.gray10}>
 							회원가입

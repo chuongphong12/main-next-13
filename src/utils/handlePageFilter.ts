@@ -1,17 +1,16 @@
-import { NextRouter } from "next/router"
+import { AppRouterInstance } from 'next/dist/shared/lib/app-router-context.shared-runtime';
 
 type IHandlePageFilter = {
-    router: NextRouter
-    query: {
-        [key: string]: any;
-    }
+	router: AppRouterInstance;
+	query: {
+		[key: string]: any;
+	};
+	pathName: string;
+};
 
-}
-
-export const handlePageFilter = ({ router, query }: IHandlePageFilter) => {
-    let o = Object.keys(query)
-        .filter((k) => query[k] != null && query[k] != '')
-        .reduce((a, k) => ({ ...a, [k]: query[k] }), {});
-    router.query = o
-    router.push(router)
-}
+export const handlePageFilter = ({ router, query, pathName }: IHandlePageFilter) => {
+	let o = Object.keys(query)
+		.filter((k) => query[k] != null && query[k] != '')
+		.reduce((a, k) => ({ ...a, [k]: query[k] }), {});
+	router.push(`${pathName}?${o}`);
+};
