@@ -10,8 +10,10 @@ import React, { useState } from 'react';
 import { Controller } from 'react-hook-form';
 import CheckRoundFilledIcon from '../../assets/icons/check-round-filled';
 import styles from './input.module.scss';
+
 const phoneNumberReplaceRegex =
 	/[(a-zA-Z)(?=.*!@#$%^&*()+_/;:"'/?>.,<[{}\])ÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚĂĐĨŨƠàáâãèéêìíòóôõùúăđĩũơƯĂẠẢẤẦẨẪẬẮẰẲẴẶẸẺẼỀỀỂưăạảấầẩẫậắằẳẵặẹẻẽềềểỄỆỈỊỌỎỐỒỔỖỘỚỜỞỠỢỤỦỨỪễệỉịọỏốồổỗộớờởỡợụủứừỬỮỰỲỴÝỶỸửữựỳỵỷỹ\u3131-\u314e|\u314f-\u3163|\uac00-\ud7a3]/g;
+
 const Input: React.FC<any> = ({
 	label,
 	inputSize = 'lg',
