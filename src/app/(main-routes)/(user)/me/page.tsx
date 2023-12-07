@@ -36,7 +36,7 @@ import { Avatar, Divider, Grid, useMediaQuery, useTheme } from '@mui/material';
 import { Box } from '@mui/system';
 import { useQuery } from '@tanstack/react-query';
 import moment from 'moment';
-import Image from "next/legacy/image";
+import Image from 'next/legacy/image';
 import { useRouter } from 'next/navigation';
 import { enqueueSnackbar } from 'notistack';
 import { ChangeEvent, useEffect, useRef, useState } from 'react';
@@ -453,7 +453,6 @@ const UserProfile = () => {
 						</Box>
 					</Box>
 					<ControlInput
-						register={register}
 						type='text'
 						name='nickname'
 						label='name'
@@ -483,7 +482,6 @@ const UserProfile = () => {
 								이메일(아이디)
 							</Typography>
 							<ControlInput
-								register={register}
 								fullWidth
 								type='text'
 								name='email'

@@ -1,7 +1,4 @@
 'use client';
-import { yupResolver } from '@hookform/resolvers/yup';
-import { useTheme } from '@mui/material';
-import { Box } from '@mui/system';
 import MailIcon from '@/assets/icons/mail';
 import { loadingAtom } from '@/atoms/loading';
 import AlertPopup from '@/elements/AlertPopup';
@@ -9,17 +6,20 @@ import AppLogo from '@/elements/AppLogo';
 import ButtonCustom from '@/elements/Button';
 import ControlInput from '@/elements/ControlInput';
 import Typography from '@/elements/Typography';
-import Link from 'next/link';
-import { useRouter } from 'next/router';
-import { useState } from 'react';
-import { ValidationMode, useForm } from 'react-hook-form';
-import { useSetRecoilState } from 'recoil';
 import { sendEmailResetPassword } from '@/services/auth.service';
 import { convertToRem } from '@/utils/convert-to-rem';
 import { emailValidator } from '@/utils/validation';
+import { yupResolver } from '@hookform/resolvers/yup';
+import { useTheme } from '@mui/material';
+import { Box } from '@mui/system';
+import Link from 'next/link';
+import { useRouter } from 'next/navigation';
+import { useState } from 'react';
+import { useForm } from 'react-hook-form';
+import { useSetRecoilState } from 'recoil';
 import * as yup from 'yup';
-import styles from '../styles.module.scss';
 import ConfirmSendMail from '../_components/confirm-send-email';
+import styles from '../styles.module.scss';
 
 const ForgotPassword = () => {
 	const theme = useTheme();
@@ -68,73 +68,75 @@ const ForgotPassword = () => {
 		}
 	};
 
-	return <>
-        {sendMailSuccess ? (
-            <ConfirmSendMail
-                message={`비밀번호 재설정 메일을 ${sendMailData} 로 보냈어요. \n혹시 이메일이 오지 않았나요? \n스팸함을 확인하거나 다시 받아보세요.`}
-                onBack={() => {
-                    setSendMailSuccess(false);
-                }}
-                resendTitle='이메일 다시 보내기'
-                onResend={() => {
-                    onSubmit({
-                        email: sendMailData,
-                    });
-                }}
-            />
-        ) : (
-            <Box
-                className={styles.sign_in}
-                style={{ backgroundColor: theme.palette.main.gray90 }}>
-                <AppLogo />
-                <Typography cate='body_2' color={theme.palette.main.gray40}>
-                    비밀번호 찾기를 위해 이메일을 입력해주세요.
-                </Typography>
-                <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
-                    <ControlInput
-                        fullWidth={true}
-                        register={register}
-                        type='text'
-                        name='email'
-                        label='Email'
-                        placeholder='이메일'
-                        control={control}
-                        startAdornment={<MailIcon />}
-                        startAdornmentFocused={<MailIcon stroke={theme.palette.main.gray10} />}
-                    />
-                    <ButtonCustom
-                        title='비밀번호 찾기 링크발송'
-                        cate='primary'
-                        isLoading={false}
-                        sx={{ width: '100%', marginTop: convertToRem(24) }}
-                        disabled={!isDirty}
-                    />
-                </form>
-                <Box className={styles.register_wrapper} sx={{ marginBottom: '1.5rem' }}>
-                    <Typography cate='caption_1' color={theme.palette.main.gray40}>
-                        아직 회원이 아니신가요?
-                    </Typography>
-                    <Link href='/signup' legacyBehavior>
-                        <Typography
-                            cate='caption_1'
-                            color={theme.palette.main.gray10}
-                            sx={{ cursor: 'pointer' }}>
-                            회원가입
-                        </Typography>
-                    </Link>
-                </Box>
-            </Box>
-        )}
-        <AlertPopup
-            onSubmit={() => {
-                setShowError(false);
-                setErrorMessage('');
-            }}
-            submitTitle='확인'
-            description={errorMessage}
-            open={showError}
-        />
-    </>;
+	return (
+		<>
+			{sendMailSuccess ? (
+				<ConfirmSendMail
+					message={`비밀번호 재설정 메일을 ${sendMailData} 로 보냈어요. \n혹시 이메일이 오지 않았나요? \n스팸함을 확인하거나 다시 받아보세요.`}
+					onBack={() => {
+						setSendMailSuccess(false);
+					}}
+					resendTitle='이메일 다시 보내기'
+					onResend={() => {
+						onSubmit({
+							email: sendMailData,
+						});
+					}}
+				/>
+			) : (
+				<Box
+					className={styles.sign_in}
+					style={{ backgroundColor: theme.palette.main.gray90 }}>
+					<AppLogo />
+					<Typography cate='body_2' color={theme.palette.main.gray40}>
+						비밀번호 찾기를 위해 이메일을 입력해주세요.
+					</Typography>
+					<form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
+						<ControlInput
+							fullWidth={true}
+							register={register}
+							type='text'
+							name='email'
+							label='Email'
+							placeholder='이메일'
+							control={control}
+							startAdornment={<MailIcon />}
+							startAdornmentFocused={<MailIcon stroke={theme.palette.main.gray10} />}
+						/>
+						<ButtonCustom
+							title='비밀번호 찾기 링크발송'
+							cate='primary'
+							isLoading={false}
+							sx={{ width: '100%', marginTop: convertToRem(24) }}
+							disabled={!isDirty}
+						/>
+					</form>
+					<Box className={styles.register_wrapper} sx={{ marginBottom: '1.5rem' }}>
+						<Typography cate='caption_1' color={theme.palette.main.gray40}>
+							아직 회원이 아니신가요?
+						</Typography>
+						<Link href='/sign-up'>
+							<Typography
+								cate='caption_1'
+								color={theme.palette.main.gray10}
+								sx={{ cursor: 'pointer' }}>
+								회원가입
+							</Typography>
+						</Link>
+					</Box>
+				</Box>
+			)}
+			<AlertPopup
+				onSubmit={() => {
+					setShowError(false);
+					setErrorMessage('');
+				}}
+				submitTitle='확인'
+				description={errorMessage}
+				open={showError}
+			/>
+		</>
+	);
 };
 
 export default ForgotPassword;

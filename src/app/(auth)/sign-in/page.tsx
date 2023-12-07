@@ -1,7 +1,7 @@
 'use client';
 
 import ChevronRightSmIcon from '@/assets/icons/chevron-right-sm';
-import MailIcon from '@/assets/icons/mail';
+import UserIcon from '@/assets/icons/user';
 import VariantIcon from '@/assets/icons/variant';
 import { authVerifyAtom } from '@/atoms/auth-verify';
 import { loadingAtom } from '@/atoms/loading';
@@ -30,7 +30,6 @@ import { useTranslation } from 'react-i18next';
 import { useRecoilState, useSetRecoilState } from 'recoil';
 import * as yup from 'yup';
 import styles from '../styles.module.scss';
-import UserIcon from '@/assets/icons/user';
 
 const SignIn = () => {
 	const theme = useTheme();
@@ -43,7 +42,12 @@ const SignIn = () => {
 
 	const schema = yup
 		.object({
-			username: yup.string().required('이메일을 입력해주세요'),
+			email: yup
+				.string()
+				.required('이메일을 입력해주세요')
+				.test('email', ' 이메일 형식을 확인해주세요', (value?: string) =>
+					emailValidator(value)
+				),
 			password: yup
 				.string()
 				.required('비밀번호를 입력해주세요.')
@@ -56,7 +60,7 @@ const SignIn = () => {
 		.required();
 
 	const defaultValues = {
-		username: '',
+		email: '',
 		password: '',
 	};
 	const setUser = useSetRecoilState(userAtom);
@@ -117,7 +121,7 @@ const SignIn = () => {
 
 	const email = useWatch({
 		control,
-		name: 'username',
+		name: 'email',
 	});
 
 	const password = useWatch({
@@ -126,7 +130,7 @@ const SignIn = () => {
 	});
 
 	return (
-        <Box
+		<Box
 			className={styles.sign_in}
 			style={{ backgroundColor: theme.palette.main.gray90 }}>
 			<AppLogo />
@@ -144,8 +148,8 @@ const SignIn = () => {
 							fullWidth={true}
 							register={register}
 							type='text'
-							name='username'
-							label='username'
+							name='email'
+							label='email'
 							placeholder='아이디'
 							control={control}
 							startAdornment={<UserIcon stroke='#9F9EA4' />}
@@ -181,7 +185,7 @@ const SignIn = () => {
 				<Typography cate='caption_1' color={theme.palette.main.gray40}>
 					아직 회원이 아니신가요?
 				</Typography>
-				<Link href='/sign-up' style={{ zIndex: 3 }} legacyBehavior>
+				<Link href='/sign-up' style={{ zIndex: 3 }}>
 					<Box display={'flex'} alignItems='center' sx={{ cursor: 'pointer' }}>
 						<Typography cate='caption_1' color={theme.palette.main.gray10}>
 							회원가입
@@ -190,7 +194,7 @@ const SignIn = () => {
 					</Box>
 				</Link>
 			</Box>
-			<Link href='/forgot-password' style={{ zIndex: 3 }} legacyBehavior>
+			<Link href='/forgot-password' style={{ zIndex: 3 }}>
 				<Typography
 					cate='caption_1'
 					color={theme.palette.main.gray40}
@@ -208,7 +212,7 @@ const SignIn = () => {
 				open={showError}
 			/>
 		</Box>
-    );
+	);
 };
 
 export default SignIn;
