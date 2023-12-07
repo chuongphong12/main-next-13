@@ -10,7 +10,7 @@ export interface IPoolResponse {
 }
 
 export interface ISendContactPool {
-	fromUsername: string;
+	fromNickname: string;
 	fromUserEmail: string;
 	fromUserPhoneNumber: string;
 	message: string;

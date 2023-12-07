@@ -28,10 +28,10 @@ import { useRouter, useSearchParams } from 'next/navigation';
 import { SyntheticEvent, useEffect, useRef, useState } from 'react';
 import YouTube from 'react-youtube';
 import { useRecoilValue, useSetRecoilState } from 'recoil';
-import { BlogInfo } from './_components/BlogInfo';
-import CommentSection from './_components/CommentSection';
-import CourseCarousel from './_components/CourseCarousel';
-import SideList from './_components/SideList';
+import { BlogInfo } from '../_components/BlogInfo';
+import CommentSection from '../_components/CommentSection';
+import CourseCarousel from '../_components/CourseCarousel';
+import SideList from '../_components/SideList';
 
 interface NotificationType {
 	email: boolean;

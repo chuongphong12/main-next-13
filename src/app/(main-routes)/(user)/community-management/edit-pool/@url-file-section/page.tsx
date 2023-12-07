@@ -25,10 +25,10 @@ import {
 } from 'react';
 import { useSetRecoilState } from 'recoil';
 import {} from '@/services/user.service';
-import CareerItem from '../pool/_components/CareerItem';
+import CareerItem from '../../pool/_components/CareerItem';
 import { convertToRem } from '@/utils/convert-to-rem';
 import Add from '@/assets/icons/add';
-import ProjectItem from '../_components/ProjectItem';
+import ProjectItem from '../../_components/ProjectItem';
 import Link from 'next/link';
 import CloseCircleSmIcon from '@/assets/icons/close-circle-sm';
 import { set } from 'lodash';

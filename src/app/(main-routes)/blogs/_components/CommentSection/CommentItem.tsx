@@ -26,7 +26,7 @@ const CommentItem = ({ comment, handleDelete, handleReport }: CommentItemProps) 
 			<Box display={'flex'} flexDirection='column' alignItems={'flex-start'} width='100%'>
 				<Box display={'flex'} alignItems={'center'}>
 					<Typography cate='caption_2_semibold' color={theme.palette.main.white}>
-						{comment?.user?.username}
+						{comment?.user?.nickname}
 					</Typography>
 					<Typography cate='caption_2' ml={0.5} color={theme.palette.main.gray30}>
 						{displayTimeDiff(comment.createdAt)}

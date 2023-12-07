@@ -265,10 +265,12 @@ const CustomDrawer = ({ handleLayoutToggle }: any) => {
 	const userPersonalUrls = ['setting', 'me', 'community-management'];
 	const userPublicUrls = ['', 'community', 'blogs'];
 	const parentPath = path.split('/')[1]?.split('?')[0];
+
 	const handleLogout = async () => {
 		setLogingOut(true);
 		await logout();
 	};
+
 	useEffect(() => {
 		if (userPersonalUrls.some((i) => i === parentPath)) {
 			setCurrentDrawerData(drawerPersonalData);

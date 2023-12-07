@@ -19,7 +19,7 @@ import { convertToRem } from '@/utils/convert-to-rem';
 import { emailValidator } from '@/utils/validation';
 import * as yup from 'yup';
 import styles from '../styles.module.scss';
-import ConfirmSendMail from '../_components/confirm-send-mail';
+import ConfirmSendMail from '../_components/confirm-send-email';
 
 const ForgotPassword = () => {
 	const theme = useTheme();

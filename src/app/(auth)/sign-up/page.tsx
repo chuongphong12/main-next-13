@@ -20,11 +20,13 @@ import { useEffect, useState } from 'react';
 import { useForm, useWatch } from 'react-hook-form';
 import { useSetRecoilState } from 'recoil';
 import * as yup from 'yup';
-import ConfirmSendMail from '../_components/confirm-send-mail';
+import ConfirmSendMail from '../_components/confirm-send-email';
 import styles from '../styles.module.scss';
 import TermDropDown from './_components/term-drop-down';
+import UserIcon from '@/assets/icons/user';
 
 interface SignupProps {
+	username: string;
 	email: string;
 	password: string;
 	confirmPassword: string;
@@ -41,6 +43,7 @@ const SignUp = () => {
 
 	const schema = yup
 		.object({
+			username: yup.string().required(),
 			email: yup
 				.string()
 				.required('이메일 형식을 확인해주세요')
@@ -73,6 +76,7 @@ const SignUp = () => {
 		.required();
 
 	const defaultValues = {
+		username: '',
 		email: '',
 		password: '',
 		confirmPassword: '',
@@ -107,6 +111,7 @@ const SignUp = () => {
 
 		if (!validateMailError) {
 			let dataSignup: ISignup = {
+				username: dataSubmit.username,
 				email: dataSubmit.email,
 				password: dataSubmit.password,
 				isReceiveEventEmail: isReceiveNotification,
@@ -202,6 +207,7 @@ const SignUp = () => {
 					resendTitle='이메일 다시 보내기'
 					onResend={() => {
 						onSubmit({
+							username: registeredData?.username || '',
 							email: registeredData?.email || '',
 							password: registeredData?.password || '',
 							confirmPassword: registeredData?.password || '',
@@ -222,13 +228,14 @@ const SignUp = () => {
 								<ControlInput
 									fullWidth={true}
 									register={register}
-									type='text'
-									name='email'
-									label='email'
-									placeholder='이메일'
+									type={'text'}
+									name='username'
+									label='username'
+									placeholder='아이디 입력'
 									control={control}
-									startAdornment={<MailIcon />}
-									startAdornmentFocused={<MailIcon stroke={theme.palette.main.gray10} />}
+									startAdornment={<UserIcon stroke='#9F9EA4' />}
+									helper={'영문과 숫자만 사용 가능하며 12글자까지 입력할 수 있습니다.'}
+									startAdornmentFocused={<UserIcon stroke={theme.palette.main.gray10} />}
 								/>
 							</Grid>
 							<Grid item xs={12} sm={12}>
@@ -238,10 +245,10 @@ const SignUp = () => {
 									type={'password'}
 									name='password'
 									label='password'
-									placeholder='비밀번호'
+									placeholder='비밀번호 입력'
 									control={control}
 									startAdornment={<VariantIcon />}
-									helper={'영문/숫자/특수문자 2가지 이상 포함, 8글자 이상 입력해주세요.'}
+									helper={'영문, 숫자, 특수문자를 포함하여 8글자 이상 입력해주세요.'}
 									startAdornmentFocused={
 										<VariantIcon stroke={theme.palette.main.gray10} />
 									}
@@ -260,6 +267,19 @@ const SignUp = () => {
 									startAdornmentFocused={
 										<VariantIcon stroke={theme.palette.main.gray10} />
 									}
+								/>
+							</Grid>
+							<Grid item xs={12} sm={12}>
+								<ControlInput
+									fullWidth={true}
+									register={register}
+									type='text'
+									name='email'
+									label='email'
+									placeholder='이메일 입력'
+									control={control}
+									startAdornment={<MailIcon />}
+									startAdornmentFocused={<MailIcon stroke={theme.palette.main.gray10} />}
 								/>
 							</Grid>
 						</Grid>

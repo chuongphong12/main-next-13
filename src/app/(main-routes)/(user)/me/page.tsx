@@ -72,7 +72,7 @@ const UserProfile = () => {
 	const xsDown = useMediaQuery('(max-width: 375px)');
 
 	useEffect(() => {
-		setValue('username', user?.username);
+		setValue('nickname', user?.nickname);
 		setValue('email', user?.email);
 		setValue('subEmail', user?.subEmail || '');
 		setValue('phoneNumber', user?.phoneNumber || '');
@@ -139,7 +139,7 @@ const UserProfile = () => {
 	const breadcrumbData = [{ name: '마이페이지' }, { name: '회원정보' }];
 	const schema = yup
 		.object({
-			username: yup.string().required('이름을 입력해주세요.'),
+			nickname: yup.string().required('이름을 입력해주세요.'),
 			subEmail: yup
 				.string()
 				.test('subEmail', '이메일 형식을 확인해주세요', (value?: string) =>
@@ -184,7 +184,7 @@ const UserProfile = () => {
 		.required();
 
 	const defaultValues: {
-		username: string;
+		nickname: string;
 		password: string;
 		newPassword: string;
 		confirmPassword: string;
@@ -193,7 +193,7 @@ const UserProfile = () => {
 		email?: string;
 		otp?: string;
 	} = {
-		username: '',
+		nickname: '',
 		password: '',
 		newPassword: '',
 		confirmPassword: '',
@@ -236,7 +236,7 @@ const UserProfile = () => {
 	const onSubmit = async (dataSubmit: any) => {
 		setLoading(true);
 		const updateData = {
-			username: dataSubmit.username,
+			nickname: dataSubmit.nickname,
 			avatarId: !!uploadedImage ? uploadedImage.id : undefined,
 			oldPassword:
 				!!dataSubmit.password && !!dataSubmit.confirmPassword
@@ -455,7 +455,7 @@ const UserProfile = () => {
 					<ControlInput
 						register={register}
 						type='text'
-						name='username'
+						name='nickname'
 						label='name'
 						onKeyDown={(event) => {
 							if (event.keyCode === 13 || event.keyCode === 176) {

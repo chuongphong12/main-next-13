@@ -7,8 +7,8 @@ import { IExperience } from '@/types/pool.type';
 import { Box, Grid, useMediaQuery, useTheme } from '@mui/material';
 import moment from 'moment';
 import { forwardRef, useEffect, useImperativeHandle, useRef, useState } from 'react';
-import CareerItem from '../pool/_components/CareerItem';
-import DatePickerSelect from '../pool/_components/DatePickerSelect';
+import CareerItem from '../../pool/_components/CareerItem';
+import DatePickerSelect from '../../pool/_components/DatePickerSelect';
 interface IExperienceForm extends IExperience {
 	listId: number;
 }

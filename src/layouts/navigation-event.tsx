@@ -4,13 +4,11 @@ import { loadingAtom } from '@/atoms/loading';
 import { logingOutAtom } from '@/atoms/loging-out';
 import { userAtom } from '@/atoms/user';
 import { userPoolAtom } from '@/atoms/user-pool';
-import Layout from '@/layouts';
 import { ColorModeContext } from '@/libs/ThemeRegistry';
 import { getUserPool } from '@/services/pool.service';
 import TokenService from '@/services/token.service';
 import { getUserProfile } from '@/services/user.service';
 import WebInfoService from '@/services/web-info.service';
-import { Backdrop, CircularProgress } from '@mui/material';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import { useContext, useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -93,7 +91,7 @@ const NavigationEvents = ({ children }: any) => {
 
 	return (
 		<>
-			<Backdrop
+			{/* <Backdrop
 				sx={{
 					color: '#fff',
 					zIndex: (theme) => {
@@ -102,7 +100,7 @@ const NavigationEvents = ({ children }: any) => {
 				}}
 				open={loading || isLoading}>
 				<CircularProgress color='inherit' />
-			</Backdrop>
+			</Backdrop> */}
 			{children}
 		</>
 	);

@@ -33,14 +33,14 @@ export default function ContactPopup({
 	const [isChecked, setIsChecked] = useState<boolean>(false);
 	const user = useRecoilValue(userAtom);
 	useEffect(() => {
-		setValue('username', user?.username);
+		setValue('nickname', user?.nickname);
 		setValue('email', user?.email);
 		setValue('phoneNumber', user?.phoneNumber || '');
 	}, [props.open]);
 
 	const schema = yup
 		.object({
-			username: yup.string().required('이름을 입력해주세요.'),
+			nickname: yup.string().required('이름을 입력해주세요.'),
 			email: yup
 				.string()
 				.test('email', '이메일 형식을 확인해주세요', (value?: string) =>
@@ -57,7 +57,7 @@ export default function ContactPopup({
 		.required();
 
 	const defaultValues = {
-		username: '',
+		nickname: '',
 		email: '',
 		phoneNumber: '',
 		message: '',
@@ -84,7 +84,7 @@ export default function ContactPopup({
 	const onSubmit = async (dataSubmit: any) => {
 		setLoading(true);
 		const reqData: ISendContactPool = {
-			fromUsername: dataSubmit.username,
+			fromNickname: dataSubmit.nickname,
 			fromUserEmail: dataSubmit.email,
 			fromUserPhoneNumber: dataSubmit.phoneNumber.split('-').join(''),
 			message: dataSubmit.message,
@@ -178,9 +178,9 @@ export default function ContactPopup({
 									cate='body_3'
 									color={theme.palette.main.gray10}
 									ml={1.5}
-									flexShrink={(poolData?.user?.username?.length || 0) > 6 ? 1 : 0}
+									flexShrink={(poolData?.user?.nickname?.length || 0) > 6 ? 1 : 0}
 									sx={
-										(poolData?.user?.username?.length || 0) > 6
+										(poolData?.user?.nickname?.length || 0) > 6
 											? {
 													overflow: 'hidden',
 													textOverflow: 'ellipsis',
@@ -190,7 +190,7 @@ export default function ContactPopup({
 											  }
 											: {}
 									}>
-									{poolData?.user?.username}
+									{poolData?.user?.nickname}
 								</Typography>
 								<Typography
 									cate='caption_2'
@@ -223,8 +223,8 @@ export default function ContactPopup({
 							<ControlInput
 								register={register}
 								type='text'
-								name='username'
-								label='username'
+								name='nickname'
+								label='nickname'
 								onKeyDown={(event) => {
 									if (event.keyCode === 13 || event.keyCode === 176) {
 										event.preventDefault();

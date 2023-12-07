@@ -196,7 +196,7 @@ const TalentDetail = ({ id }: { id: string | number }) => {
 							}
 						/>
 						<Typography cate='title_3_semibold' mt={2.5} mb={0.5}>
-							{responseDetail?.data?.user?.username}
+							{responseDetail?.data?.user?.nickname}
 						</Typography>
 
 						<Grid container gap={0.5} direction={'column'} alignItems={'center'} py={2}>

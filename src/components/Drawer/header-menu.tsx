@@ -118,7 +118,7 @@ const HeaderMenu = ({
 					/>
 				</RoundGradientAvatar>
 				<Typography cate='body_3' color={theme.palette.main.white} mx={1}>
-					{user?.username}
+					{user?.nickname}
 				</Typography>
 				<ChevronDownIcon stroke={theme.palette.main.white} />
 			</Button>

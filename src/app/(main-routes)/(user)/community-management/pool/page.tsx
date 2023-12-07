@@ -113,7 +113,7 @@ const Pool = () => {
 						cate={mdDown ? 'subtitle_1_semibold' : 'title_2_bold'}
 						color={theme.palette.main.gray10}
 						mb={2}>
-						{user?.username}
+						{user?.nickname}
 					</Typography>
 					<Box display={'flex'} alignItems={'center'} mb={1}>
 						{!mdDown && (

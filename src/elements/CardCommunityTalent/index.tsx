@@ -76,7 +76,7 @@ export default function CardCommunityTalent({
 							WebkitLineClamp: '1',
 							WebkitBoxOrient: 'vertical',
 						}}>
-						{item.user?.username} / {item.yearsOfExperience}년차
+						{item.user?.nickname} / {item.yearsOfExperience}년차
 					</Typography>
 					{!!item?.experiences[0] && (
 						<Typography

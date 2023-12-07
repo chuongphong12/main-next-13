@@ -9,10 +9,10 @@ import { convertToRem } from '@/utils/convert-to-rem';
 import { Box, Grid, Button as MButton, useMediaQuery, useTheme } from '@mui/material';
 import { useEffect, useRef, useState } from 'react';
 import { useRecoilState, useSetRecoilState } from 'recoil';
-import CareerSection from './career-section';
-import EducationSection from './education-section';
-import ProjectSection from './project-section';
-import UrlFileSection from './url-file-section';
+import CareerSection from './@career-section/page';
+import EducationSection from './@education-section/page';
+import ProjectSection from './@project-section/page';
+import UrlFileSection from './@url-file-section/page';
 
 import { userPoolAtom } from '@/atoms/user-pool';
 import { createUserPool, getUserPool, updateUserPool } from '@/services/pool.service';

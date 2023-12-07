@@ -30,6 +30,7 @@ import { useTranslation } from 'react-i18next';
 import { useRecoilState, useSetRecoilState } from 'recoil';
 import * as yup from 'yup';
 import styles from '../styles.module.scss';
+import UserIcon from '@/assets/icons/user';
 
 const SignIn = () => {
 	const theme = useTheme();
@@ -42,12 +43,7 @@ const SignIn = () => {
 
 	const schema = yup
 		.object({
-			email: yup
-				.string()
-				.required('이메일을 입력해주세요')
-				.test('email', ' 이메일 형식을 확인해주세요', (value?: string) =>
-					emailValidator(value)
-				),
+			username: yup.string().required('이메일을 입력해주세요'),
 			password: yup
 				.string()
 				.required('비밀번호를 입력해주세요.')
@@ -60,7 +56,7 @@ const SignIn = () => {
 		.required();
 
 	const defaultValues = {
-		email: '',
+		username: '',
 		password: '',
 	};
 	const setUser = useSetRecoilState(userAtom);
@@ -121,7 +117,7 @@ const SignIn = () => {
 
 	const email = useWatch({
 		control,
-		name: 'email',
+		name: 'username',
 	});
 
 	const password = useWatch({
@@ -148,12 +144,12 @@ const SignIn = () => {
 							fullWidth={true}
 							register={register}
 							type='text'
-							name='email'
-							label='email'
-							placeholder='이메일'
+							name='username'
+							label='username'
+							placeholder='아이디'
 							control={control}
-							startAdornment={<MailIcon />}
-							startAdornmentFocused={<MailIcon stroke={theme.palette.main.gray10} />}
+							startAdornment={<UserIcon stroke='#9F9EA4' />}
+							startAdornmentFocused={<UserIcon stroke={theme.palette.main.gray10} />}
 						/>
 					</Grid>
 					<Grid item xs={12} sm={12}>
