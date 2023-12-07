@@ -34,7 +34,7 @@ const ProjectItem = ({ item, onClose }: ProjectItemProps) => {
 	const xlUp = useMediaQuery('(min-width: 992px)');
 	const mdDown = useMediaQuery('(max-width: 768px)');
 	return (
-		<Section>
+        <Section>
 			<Box
 				display={'flex'}
 				alignItems={xlUp ? 'center' : 'flex-start'}
@@ -86,7 +86,7 @@ const ProjectItem = ({ item, onClose }: ProjectItemProps) => {
 					<Typography cate='caption_2' flexShrink={0}>
 						관련 링크:{' '}
 					</Typography>
-					<Link href={item?.relatedLink}>
+					<Link href={item?.relatedLink} legacyBehavior>
 						<Typography
 							cate='caption_2'
 							ml={xlUp ? 0.5 : 0}
@@ -105,7 +105,7 @@ const ProjectItem = ({ item, onClose }: ProjectItemProps) => {
 				</Box>
 			)}
 		</Section>
-	);
+    );
 };
 
 export default ProjectItem;

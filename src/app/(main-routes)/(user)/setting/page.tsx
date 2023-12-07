@@ -267,7 +267,7 @@ const Setting = () => {
 							<Typography cate='body_3' color={theme.palette.main.gray10} mr={3}>
 								혜택/이벤트 수신 동의
 							</Typography>
-							<Link href='#'>
+							<Link href='#' legacyBehavior>
 								<Typography
 									cate='body_3'
 									color={theme.palette.main.primary_light}

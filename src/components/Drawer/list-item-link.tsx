@@ -18,12 +18,12 @@ const ListItemLink = ({
 	if (to) {
 		if (isParent) {
 			return (
-				<ListItem
+                <ListItem
 					disablePadding
 					sx={{ cursor: 'pointer' }}
 					className='disable-text-selection'
 					onClick={onClick}>
-					<Link href={to}>
+					<Link href={to} legacyBehavior>
 						<Box display='flex'>
 							<Box sx={{ marginRight: drawerOpen ? '1rem' : 0 }} component={'div'}>
 								{highlight ? activeIcon : null}
@@ -49,10 +49,10 @@ const ListItemLink = ({
 						</Box>
 					</Link>
 				</ListItem>
-			);
+            );
 		}
 		return (
-			<ListItem
+            <ListItem
 				sx={{
 					padding: '0.5rem 2.5rem',
 					cursor: 'pointer',
@@ -60,7 +60,7 @@ const ListItemLink = ({
 				onClick={onClick}
 				className='disable-text-selection'>
 				{icon && icon}
-				<Link href={to}>
+				<Link href={to} legacyBehavior>
 					<Typography
 						cate='body_3'
 						color={highlight ? theme.palette.main.point : theme.palette.main.gray10}>
@@ -68,15 +68,15 @@ const ListItemLink = ({
 					</Typography>
 				</Link>
 			</ListItem>
-		);
+        );
 	}
 	return (
-		<ListItem
+        <ListItem
 			disablePadding
 			onClick={onClick}
 			sx={{ cursor: 'pointer' }}
 			className='disable-text-selection'>
-			<Link href={child && child[0].to}>
+			<Link href={child && child[0].to} legacyBehavior>
 				<Box display='flex'>
 					<Box sx={{ marginRight: drawerOpen ? '1rem' : 0 }} component={'div'}>
 						{highlight ? activeIcon : null}
@@ -102,7 +102,7 @@ const ListItemLink = ({
 				</Box>
 			</Link>
 		</ListItem>
-	);
+    );
 };
 
 export default ListItemLink;

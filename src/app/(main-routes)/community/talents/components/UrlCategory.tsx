@@ -23,12 +23,12 @@ const UrlCategory = ({ item }: UrlCategoryProps) => {
 	const theme = useTheme();
 
 	return (
-		<Section>
+        <Section>
 			<Typography cate='body_2' width={convertToRem(100)} flexShrink={0}>
 				관련기사
 			</Typography>
 			<Grid gap={1} ml={2} display='flex' flexWrap={'wrap'}>
-				<Link href={item} target='_blank'>
+				<Link href={item} target='_blank' legacyBehavior>
 					<Typography
 						cate='body_2'
 						sx={{
@@ -42,7 +42,7 @@ const UrlCategory = ({ item }: UrlCategoryProps) => {
 				</Link>
 			</Grid>
 		</Section>
-	);
+    );
 };
 
 export default UrlCategory;

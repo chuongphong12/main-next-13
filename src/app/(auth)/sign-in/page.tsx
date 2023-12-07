@@ -126,7 +126,7 @@ const SignIn = () => {
 	});
 
 	return (
-		<Box
+        <Box
 			className={styles.sign_in}
 			style={{ backgroundColor: theme.palette.main.gray90 }}>
 			<AppLogo />
@@ -181,7 +181,7 @@ const SignIn = () => {
 				<Typography cate='caption_1' color={theme.palette.main.gray40}>
 					아직 회원이 아니신가요?
 				</Typography>
-				<Link href='/sign-up' style={{ zIndex: 3 }}>
+				<Link href='/sign-up' style={{ zIndex: 3 }} legacyBehavior>
 					<Box display={'flex'} alignItems='center' sx={{ cursor: 'pointer' }}>
 						<Typography cate='caption_1' color={theme.palette.main.gray10}>
 							회원가입
@@ -190,7 +190,7 @@ const SignIn = () => {
 					</Box>
 				</Link>
 			</Box>
-			<Link href='/forgot-password' style={{ zIndex: 3 }}>
+			<Link href='/forgot-password' style={{ zIndex: 3 }} legacyBehavior>
 				<Typography
 					cate='caption_1'
 					color={theme.palette.main.gray40}
@@ -208,7 +208,7 @@ const SignIn = () => {
 				open={showError}
 			/>
 		</Box>
-	);
+    );
 };
 
 export default SignIn;

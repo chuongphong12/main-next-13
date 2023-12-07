@@ -38,18 +38,19 @@ const Breadcrumbs = (props: BreadcrumbProps) => {
 			);
 		} else {
 			return (
-				<Link
-					style={{
+                <Link
+                    style={{
 						textDecoration: 'none',
 						color: 'primary',
 						fontWeight: 600,
 					}}
-					key={index}
-					color='inherit'
-					href={breadcrumb.url}>
+                    key={index}
+                    color='inherit'
+                    href={breadcrumb.url}
+                    legacyBehavior>
 					{breadcrumb.name}
 				</Link>
-			);
+            );
 		}
 	});
 

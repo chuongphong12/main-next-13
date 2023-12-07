@@ -23,7 +23,7 @@ const ProjectItem = ({ item }: ProjectItemProps) => {
 	const theme = useTheme();
 	const mdUp = useMediaQuery('(min-width: 768px)');
 	return (
-		<Section>
+        <Section>
 			<Box
 				display={'flex'}
 				alignItems={mdUp ? 'center' : 'flex-start'}
@@ -47,7 +47,7 @@ const ProjectItem = ({ item }: ProjectItemProps) => {
 					<Typography cate='caption_2' flexShrink={0}>
 						관련 링크
 					</Typography>
-					<Link href={item.relatedLink}>
+					<Link href={item.relatedLink} legacyBehavior>
 						<Typography
 							cate='caption_2'
 							sx={{
@@ -66,7 +66,7 @@ const ProjectItem = ({ item }: ProjectItemProps) => {
 				</Box>
 			)}
 		</Section>
-	);
+    );
 };
 
 export default ProjectItem;
