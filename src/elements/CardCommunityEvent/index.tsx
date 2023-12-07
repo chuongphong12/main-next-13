@@ -11,7 +11,7 @@ import {
 	useTheme,
 } from '@mui/material';
 import Card from '@mui/material/Card';
-import Image from 'next/image';
+import Image from "next/legacy/image";
 import { useState } from 'react';
 import Bookmark from '../../assets/icons/bookmark';
 import BookmarkFilledIcon from '../../assets/icons/bookmark-sm-filled';

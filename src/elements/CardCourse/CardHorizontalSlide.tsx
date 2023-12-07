@@ -13,7 +13,7 @@ import {
 	useTheme,
 } from '@mui/material';
 import Card from '@mui/material/Card';
-import Image from 'next/image';
+import Image from "next/legacy/image";
 import { useRouter } from 'next/router';
 import HeartSmIcon from '../../assets/icons/heart-sm';
 export type ChipProps = MChipProps & {

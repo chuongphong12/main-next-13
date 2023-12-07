@@ -16,7 +16,7 @@ import {
 import { convertToRem } from 'utils/convert-to-rem';
 import PlusLgIcon from '../../assets/icons/plus-lg';
 import Typography from '@/elements/Typography';
-import Image from 'next/image';
+import Image from "next/legacy/image";
 import HeartBlankIcon from '../../assets/icons/heart-blank';
 import HeartIcon from '../../assets/icons/heart';
 import BookmarkCheckbox from '@/elements/BookmarkCheckbox';

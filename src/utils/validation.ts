@@ -1,17 +1,17 @@
 export const emailValidator = (email?: string, isRequire: boolean = true): boolean => {
-  return email ? /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email) : false
+  return email ? /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email) : false;
 }
 
 export const emailOptionalValidator = (email?: string): boolean => {
-  return email ? /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email) : true
+  return email ? /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email) : true;
 }
 
 export const passwordValidator = (password?: string): boolean => {
-  return password ? /^(?=.*[A-Za-z])(?=.*[@$!%*#?&])[A-Za-z@$!%*#?&]{8,}$/.test(password) || /^(?=.*\d)(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d@$!%*#?&]{8,}$/.test(password) || /^(?=.*\d)(?=.*[@$!%*#?&])[\d@$!%*#?&]{8,}$/.test(password) || /^(?=.*[A-Za-z])(?=.*[@$!%*#?&])[A-Za-z@$!%*#?&]{8,}$/.test(password) : false
+  return password ? /^(?=.*[A-Za-z])(?=.*[@$!%*#?&])[A-Za-z@$!%*#?&]{8,}$/.test(password) || /^(?=.*\d)(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d@$!%*#?&]{8,}$/.test(password) || /^(?=.*\d)(?=.*[@$!%*#?&])[\d@$!%*#?&]{8,}$/.test(password) || /^(?=.*[A-Za-z])(?=.*[@$!%*#?&])[A-Za-z@$!%*#?&]{8,}$/.test(password) : false;
 }
 
 export const passwordOptionalValidator = (password?: string): boolean => {
-  return password ? /^(?=.*[A-Za-z])(?=.*[@$!%*#?&])[A-Za-z@$!%*#?&]{8,}$/.test(password) || /^(?=.*\d)(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d@$!%*#?&]{8,}$/.test(password) || /^(?=.*\d)(?=.*[@$!%*#?&])[\d@$!%*#?&]{8,}$/.test(password) || /^(?=.*[A-Za-z])(?=.*[@$!%*#?&])[A-Za-z@$!%*#?&]{8,}$/.test(password) : true
+  return password ? /^(?=.*[A-Za-z])(?=.*[@$!%*#?&])[A-Za-z@$!%*#?&]{8,}$/.test(password) || /^(?=.*\d)(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d@$!%*#?&]{8,}$/.test(password) || /^(?=.*\d)(?=.*[@$!%*#?&])[\d@$!%*#?&]{8,}$/.test(password) || /^(?=.*[A-Za-z])(?=.*[@$!%*#?&])[A-Za-z@$!%*#?&]{8,}$/.test(password) : true;
 }
 
 export const phoneValidator = (phoneNumber?: string): boolean => {
@@ -29,7 +29,7 @@ export const phoneOptionalValidator = (phoneNumber?: string): boolean => {
 }
 
 export const otpValidator = (otp?: string): boolean => {
-  return otp ? /.[0-9]{4,5}./.test(otp) : false
+  return otp ? /.[0-9]{4,5}./.test(otp) : false;
 }
 
 export const nicknameValidator = (nickname?: string): boolean => {
@@ -48,5 +48,5 @@ export const nicknameValidator = (nickname?: string): boolean => {
 
 
 export const urlValidator = (url: string): boolean => {
-  return url ? /[(http(s)?):\/\/(www\.)?a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/ig.test(url) : false
+  return url ? /[(http(s)?):\/\/(www\.)?a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/ig.test(url) : false;
 }

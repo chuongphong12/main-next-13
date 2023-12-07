@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { ProgressiveImageProps } from './progressive-image.type';
 import styles from './styles.module.scss';
-import NImage from 'next/image';
+import NImage from "next/legacy/image";
 import { Box } from '@mui/material';
 const ProgressiveImage = ({
   placeholderSrc,

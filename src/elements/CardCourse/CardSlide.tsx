@@ -17,7 +17,7 @@ import {
 } from '@mui/material';
 import Card from '@mui/material/Card';
 import moment from 'moment';
-import Image from 'next/image';
+import Image from "next/legacy/image";
 import * as React from 'react';
 import { useRef, useState } from 'react';
 import HeartSmIcon from '../../assets/icons/heart-sm';

@@ -6,7 +6,7 @@ import { Box, CardActionArea, IconButton, useMediaQuery, useTheme } from '@mui/m
 import { convertToRem } from 'utils/convert-to-rem';
 import Typography from '@/elements/Typography';
 import ProjectSuccessIcon from '../../assets/icons/project-success';
-import Image from 'next/image';
+import Image from "next/legacy/image";
 import FavCheckbox from '@/elements/FavCheckbox';
 import MenuIcon from '../../assets/icons/menu';
 

@@ -36,7 +36,7 @@ import { Avatar, Divider, Grid, useMediaQuery, useTheme } from '@mui/material';
 import { Box } from '@mui/system';
 import { useQuery } from '@tanstack/react-query';
 import moment from 'moment';
-import Image from 'next/image';
+import Image from "next/legacy/image";
 import { useRouter } from 'next/navigation';
 import { enqueueSnackbar } from 'notistack';
 import { ChangeEvent, useEffect, useRef, useState } from 'react';
