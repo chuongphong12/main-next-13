@@ -91,16 +91,6 @@ const NavigationEvents = ({ children }: any) => {
 
 	return (
 		<>
-			{/* <Backdrop
-				sx={{
-					color: '#fff',
-					zIndex: (theme) => {
-						return theme.zIndex.drawer + 1000;
-					},
-				}}
-				open={loading || isLoading}>
-				<CircularProgress color='inherit' />
-			</Backdrop> */}
 			{children}
 		</>
 	);
